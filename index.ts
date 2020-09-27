@@ -1,8 +1,8 @@
-import { hasMinimalLenght } from './src/helpers/hasMinimalLenght';
-import { hasSpecialCaracteres } from './src/helpers/hasSpecialCaracteres';
-import { hasUppercase } from './src/helpers/hasUppercase';
-import { itsCommonPasswords } from './src/helpers/itsCommonPassword';
-import { itsJustNumeric } from './src/helpers/itsJustNumeric';
+import { hasMinimalLenght, 
+    hasSpecialCaracteres, 
+    hasUppercase, 
+    itsCommonPasswords, 
+    itsJustNumeric } from './src/helpers';
 
 export class P4ss {
     
@@ -16,6 +16,8 @@ export class P4ss {
 
     isValidPassword() {
         const msg: Array<string> = []
+        
+        let common = true;
  
         const numericPassword = itsJustNumeric(this.password, msg);
         const minimalLenght = hasMinimalLenght(this.password, 8, msg);
@@ -23,12 +25,14 @@ export class P4ss {
         const upperCase = hasUppercase(this.password, msg);
 
         if(this.commonChecking) {
-            const common = itsCommonPasswords(this.password, msg);
+            common = itsCommonPasswords(this.password, msg);
         }
 
-        console.log(msg);
-
-        const secure = !numericPassword && minimalLenght && specialCaracteres && upperCase;
+        const secure = !numericPassword && 
+        minimalLenght && 
+        specialCaracteres && 
+        upperCase && 
+        !common;
 
         return {secure, msg};
     }
