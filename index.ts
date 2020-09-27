@@ -7,9 +7,9 @@ import { hasMinimalLenght,
 export class P4ss {
     
     private password: string;
-    private commonChecking: boolean = false;
+    private commonChecking: boolean;
         
-    constructor(password: string, commonChecking: boolean) {
+    constructor(password: string, commonChecking: boolean = false) {
         this.password = password;
         this.commonChecking = commonChecking;
     }
