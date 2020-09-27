@@ -1,0 +1,17 @@
+{
+  "name": "p4ss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/LuizEduardoCardozo/p4ss.git",
+  "author": "Luiz Eduardo Cardozo <eduard.cardoz@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/jest": "^26.0.14",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.4.0",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
