@@ -1,4 +1,4 @@
-import { P4ss } from '..';
+import P4ss from '..';
 
 describe('P4ss password strenght tester', () => {
 

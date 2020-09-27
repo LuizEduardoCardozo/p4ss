@@ -4,7 +4,7 @@ import { hasMinimalLenght,
     itsCommonPasswords, 
     itsJustNumeric } from './src/helpers';
 
-export class P4ss {
+export default class P4ss {
     
     private password: string;
     private commonChecking: boolean;
