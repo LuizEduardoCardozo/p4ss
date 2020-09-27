@@ -6,6 +6,6 @@ describe('P4ss password strenght tester', () => {
         const p4ss = new P4ss('123');
         const isValid = p4ss.isValidPassword();
         expect(isValid.secure).toBe(false);
-    })
+    })  
 
 })
