@@ -1,6 +1,7 @@
 import { hasMinimalLenght } from '../src/helpers/hasMinimalLenght';
 import { hasSpecialCaracteres } from '../src/helpers/hasSpecialCaracteres';
 import { hasUppercase } from '../src/helpers/hasUppercase';
+import { itsCommonPasswords } from '../src/helpers/itsCommonPassword';
 import { itsJustNumeric } from '../src/helpers/itsJustNumeric';
 
 describe('helpers', () => {
@@ -58,6 +59,19 @@ describe('helpers', () => {
         const testString = 'Abc';
         const response = hasUppercase(testString, msg);
         expect(response).toBe(true);
+    })
+
+
+    it('should return false when passed an common password', ()=> {
+        const testString = 'freyfvfnfnf';
+        const response = itsCommonPasswords(testString, msg);
+        expect(response).toBe(true);
+    })
+    
+    it('should return true when passed a not common password', ()=> {
+        const testString = 'b2xhbXVuZG8';
+        const response = itsCommonPasswords(testString, msg);
+        expect(response).toBe(false);  
     })
 
     
