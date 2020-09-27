@@ -1,5 +1,6 @@
 import { hasMinimalLenght } from '../src/helpers/hasMinimalLenght';
 import { hasSpecialCaracteres } from '../src/helpers/hasSpecialCaracteres';
+import { hasUppercase } from '../src/helpers/hasUppercase';
 import { itsJustNumeric } from '../src/helpers/itsJustNumeric';
 
 describe('helpers', () => {
@@ -47,5 +48,17 @@ describe('helpers', () => {
     })
 
     
+    it('should return false when passed an string that not contains any uppercase characteres', ()=> {
+        const testString = 'abc';
+        const response = hasUppercase(testString, msg);
+        expect(response).toBe(false);
+    })
+
+    it('should return true when passed an string that contains uppercase characteres', ()=> {
+        const testString = 'Abc';
+        const response = hasUppercase(testString, msg);
+        expect(response).toBe(true);
+    })
+
     
 });

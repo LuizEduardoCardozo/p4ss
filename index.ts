@@ -1,5 +1,6 @@
 import { hasMinimalLenght } from './src/helpers/hasMinimalLenght';
 import { hasSpecialCaracteres } from './src/helpers/hasSpecialCaracteres';
+import { hasUppercase } from './src/helpers/hasUppercase';
 import { itsJustNumeric } from './src/helpers/itsJustNumeric';
 
 export class P4ss {
@@ -17,10 +18,11 @@ export class P4ss {
         const numericPassword = itsJustNumeric(this.password, msg);
         const minimalLenght = hasMinimalLenght(this.password, 8, msg);
         const specialCaracteres = hasSpecialCaracteres(this.password, ['!', '@', '$'], msg);
+        const upperCase = hasUppercase(this.password, msg);
 
         console.log(msg);
 
-        const secure = !numericPassword && minimalLenght && specialCaracteres;
+        const secure = !numericPassword && minimalLenght && specialCaracteres && upperCase;
 
         return {secure, msg};
     }
