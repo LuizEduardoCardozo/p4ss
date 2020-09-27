@@ -12,6 +12,7 @@ export class P4ss {
 
     isValidPassword() {
         const msg: Array<string> = []
+ 
         const numericPassword = itsJustNumeric(this.password, msg);
         const minimalLenght = hasMinimalLenght(this.password, 8, msg);
         
